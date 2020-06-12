@@ -1,0 +1,30 @@
+{
+    "manifest_version": 2,
+    "name": "Moderator",
+    "description": "Get moderator privileges within the chatroom, have fun",
+    "version": "0.1",
+    "devtools_page": "devtools.html",
+    "content_scripts": [
+        {
+          "matches": [
+            "https://www.curso-ingles.com/comunidad/chat/*"
+          ],
+          "run_at": "document_end",
+          "js": ["content.js"]
+        }
+    ],
+    "web_accessible_resources" : [],
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+    "browser_action": {
+        "default_icon": "icon.png"
+    },
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "permissions": [
+        "activeTab",
+        "tabs", 
+        "http://*/*",
+        "https://*/*"
+    ]
+  }
