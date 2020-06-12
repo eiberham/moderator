@@ -7,8 +7,12 @@ chrome.runtime.onMessage.addListener(
         activeUsers.forEach(user => {
             const div = document.createElement('div');
             const img = document.createElement('div');
-            img.style.backgroundImage = `url('https:${user.avatar})`;
-            img.style.backgroundSize = '50px 50px';
+            img.style.backgroundImage = `url('https:${user.avatar}')`;
+            img.style.backgroundSize = 'contain';
+            img.style.backgroundRepeat = 'no-repeat';
+            img.style.borderRadius = '50%';
+            img.style.height = '3rem';
+            img.style.width = '3rem';
             div.appendChild(img);
             div.appendChild(document.createTextNode(user.name));
             usersList.appendChild(div);

@@ -17,7 +17,7 @@ chrome.runtime.onMessage.addListener(
 const scr = document.createElement('script');
 //appending text to a function to convert it's src to string only works in Chrome
 scr.textContent = `
-  window.chat.currentUser.moderator = true;        
+  window.chat.currentUser.moderator = true;      
   document.addEventListener('usersListRequest', function(e) {
     // e.detail contains the transferred data (can be anything, ranging
     // from JavaScript objects to strings).
